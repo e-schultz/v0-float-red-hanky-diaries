@@ -1,0 +1,27 @@
+.slutprint-dot {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--red-hanky);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-effects);
+  animation: slutprint-fade 3s ease-out forwards;
+}
+
+.effects-disabled .slutprint-dot {
+  display: none;
+}
+
+/* Effect variations */
+.slutprint-dot.variant-gold {
+  background: var(--popper-gold);
+}
+
+.slutprint-dot.variant-blue {
+  background: var(--float-blue);
+}
+
+.slutprint-dot.variant-pink {
+  background: var(--flesh-pink);
+}

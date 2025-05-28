@@ -1,0 +1,120 @@
+/* Base styles and CSS custom properties */
+:root {
+  /* Color palette */
+  --red-hanky: #cc0000;
+  --popper-gold: #ffd700;
+  --void-black: #000000;
+  --shimmer-white: #ffffff;
+  --float-blue: #60a5fa;
+  --flesh-pink: #ff69b4;
+  --ethics-green: #00ff88;
+
+  /* Typography scale */
+  --font-scale: 1.0;
+  --font-size-xs: calc(0.75rem * var(--font-scale));
+  --font-size-sm: calc(0.875rem * var(--font-scale));
+  --font-size-base: calc(1rem * var(--font-scale));
+  --font-size-lg: calc(1.125rem * var(--font-scale));
+  --font-size-xl: calc(1.25rem * var(--font-scale));
+  --font-size-2xl: calc(1.5rem * var(--font-scale));
+  --font-size-3xl: calc(1.875rem * var(--font-scale));
+  --font-size-4xl: calc(2.25rem * var(--font-scale));
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Animation timings */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Z-index scale */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tooltip: 500;
+  --z-effects: 1000;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+}
+
+/* Theme variations */
+[data-theme="high-contrast"] {
+  --red-hanky: #ff0000;
+  --popper-gold: #ffff00;
+  --float-blue: #0080ff;
+  --flesh-pink: #ff00ff;
+  --ethics-green: #00ff00;
+}
+
+[data-theme="minimal"] {
+  --red-hanky: #666666;
+  --popper-gold: #999999;
+  --float-blue: #888888;
+  --flesh-pink: #aaaaaa;
+  --ethics-green: #777777;
+}
+
+/* Font size variations */
+[data-font-size="small"] {
+  --font-scale: 0.9;
+}
+
+[data-font-size="large"] {
+  --font-scale: 1.2;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Base reset and typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--void-black);
+  color: var(--shimmer-white);
+  font-family: var(--font-inter), sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: var(--font-size-base);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--float-blue);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--red-hanky);
+  color: var(--shimmer-white);
+}

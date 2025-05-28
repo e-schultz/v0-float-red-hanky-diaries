@@ -1,4 +1,11 @@
-/* Remove the Google Fonts import */
+@import "../styles/base.css";
+@import "../styles/animations.css";
+@import "../styles/components/zine-container.css";
+@import "../styles/components/page.css";
+@import "../styles/components/content.css";
+@import "../styles/components/navigation.css";
+@import "../styles/components/effects.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +28,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Core Layout */
 .zine-container {
   max-width: 800px;
   margin: 0 auto;
@@ -38,17 +46,7 @@ body {
   display: block;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Page Structure */
 .page-header {
   border-bottom: 3px solid var(--red-hanky);
   padding-bottom: 1rem;
@@ -81,6 +79,7 @@ body {
   font-weight: 600;
 }
 
+/* Content Types */
 .manifesto-text {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -149,8 +148,26 @@ body {
   color: var(--float-blue);
   margin: 1rem 0;
   overflow-x: auto;
+  white-space: pre-wrap;
 }
 
+.methodology-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.methodology-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.methodology-list li:before {
+  content: "→ ";
+  color: var(--red-hanky);
+  font-weight: bold;
+}
+
+/* Navigation */
 .navigation {
   position: fixed;
   bottom: 2rem;
@@ -195,8 +212,16 @@ body {
   color: var(--popper-gold);
 }
 
-.shimmer-text {
-  animation: shimmer 3s ease-in-out infinite;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes shimmer {
@@ -208,10 +233,6 @@ body {
     opacity: 1;
     text-shadow: 0 0 20px currentColor;
   }
-}
-
-.glitch-text {
-  animation: glitch 0.3s ease-in-out infinite alternate;
 }
 
 @keyframes glitch {
@@ -237,14 +258,6 @@ body {
   }
 }
 
-.float-sigil {
-  display: inline-block;
-  font-size: 1.5rem;
-  color: var(--float-blue);
-  margin: 0 0.5rem;
-  animation: sigil-pulse 2s ease-in-out infinite;
-}
-
 @keyframes sigil-pulse {
   0%,
   100% {
@@ -257,22 +270,35 @@ body {
   }
 }
 
-.methodology-list {
-  list-style: none;
-  padding-left: 0;
+@keyframes slutprint-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
 }
 
-.methodology-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+/* Animation Classes */
+.shimmer-text {
+  animation: shimmer 3s ease-in-out infinite;
 }
 
-.methodology-list li:before {
-  content: "→ ";
-  color: var(--red-hanky);
-  font-weight: bold;
+.glitch-text {
+  animation: glitch 0.3s ease-in-out infinite alternate;
 }
 
+.float-sigil {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: var(--float-blue);
+  margin: 0 0.5rem;
+  animation: sigil-pulse 2s ease-in-out infinite;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .page {
     padding: 1rem;

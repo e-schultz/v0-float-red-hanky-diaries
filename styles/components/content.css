@@ -1,0 +1,101 @@
+/* Content type styles */
+.manifesto-text {
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  margin-bottom: var(--space-6);
+}
+
+.highlight {
+  background: linear-gradient(45deg, var(--red-hanky), var(--flesh-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.quote-block {
+  border-left: 4px solid var(--popper-gold);
+  padding-left: var(--space-6);
+  margin: var(--space-8) 0;
+  font-style: italic;
+  color: var(--popper-gold);
+  font-size: var(--font-size-xl);
+}
+
+.ethics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin: var(--space-8) 0;
+}
+
+.ethics-card {
+  background: rgba(204, 0, 0, 0.1);
+  border: 2px solid var(--red-hanky);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: all var(--duration-normal) ease;
+}
+
+.ethics-card:hover {
+  background: rgba(204, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: var(--red-hanky);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.ritual-instructions {
+  background: rgba(255, 215, 0, 0.1);
+  border: 2px solid var(--popper-gold);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.code-block {
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid var(--float-blue);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: var(--font-size-sm);
+  color: var(--float-blue);
+  margin: var(--space-4) 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.methodology-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.methodology-list li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.methodology-list li:before {
+  content: "→ ";
+  color: var(--red-hanky);
+  font-weight: bold;
+}
+
+.float-sigil {
+  display: inline-block;
+  font-size: var(--font-size-2xl);
+  color: var(--float-blue);
+  margin: 0 var(--space-2);
+  animation: sigil-pulse 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .ethics-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,15 @@
+.zine-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+}
+
+.zine-container.animations-disabled {
+  animation: none;
+}
+
+.zine-container.animations-disabled * {
+  animation: none !important;
+  transition: none !important;
+}
