@@ -18,9 +18,33 @@ const jetbrainsMono = JetBrains_Mono({
   style: ["normal", "italic"],
 })
 
+// Define metadata with social media cards
 export const metadata: Metadata = {
   title: "Red Hanky Popper Zine - Bottom Epistemology",
-  description: "A Single Page Application in Bottom Epistemology",
+  description:
+    "A Single Page Application in Bottom Epistemology exploring consciousness expansion and temporal activism.",
+  openGraph: {
+    title: "Red Hanky Popper Zine - Bottom Epistemology",
+    description:
+      "A Single Page Application in Bottom Epistemology exploring consciousness expansion and temporal activism.",
+    images: [
+      {
+        url: "/images/social-card.png",
+        width: 1200,
+        height: 630,
+        alt: "Red Hanky Popper Zine",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Red Hanky Popper Zine - Bottom Epistemology",
+    description:
+      "A Single Page Application in Bottom Epistemology exploring consciousness expansion and temporal activism.",
+    images: ["/images/social-card.png"],
+    creator: "@redhankypopper",
+  },
     generator: 'v0.dev'
 }
 
